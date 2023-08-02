@@ -6,6 +6,8 @@ namespace helloWorld
     {
         static void Main(string[] args)
         {
+            // WARNING!!! The below code has not been tested yet. There may be errors in it.
+            
             Console.WriteLine("CokeCoder v2.0");
             
             // declaring variables
@@ -99,7 +101,7 @@ namespace helloWorld
                         textBreakUp = text[i];
                         textConvert = (int)textBreakUp;
                         textConvert = textConvert + (key * ((i + 1) % 2 +1));
-                        textConvert = textConvert.Round(textConvert);
+                        textConvert = Round(textConvert);
                         Console.Write((char)textConvert);
                     }
                     if (i == 0)
@@ -124,7 +126,7 @@ namespace helloWorld
                         textBreakUp = text[i];
                         textConvert = (int)textBreakUp;
                         textConvert = textConvert - (key * ((i + 1) % 2 + 1));
-                        textConvert = textConvert.Round(textConvert);
+                        textConvert = Round(textConvert);
                         Console.Write((char)textConvert);
                     }
                     if (i == 0)
