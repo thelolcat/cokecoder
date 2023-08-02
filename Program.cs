@@ -16,7 +16,6 @@ namespace helloWorld
             int key = 1;
             int textConvert;
             int result;
-            int i;
 
             while (counter == 1) // carries on looping until you do not input
             {
@@ -95,11 +94,12 @@ namespace helloWorld
                     command = command.Replace("/end", " ");
                     command = command.Trim();
                     text = command;
-                    for (i = 0; i < text.Length; i++)
+                    for (int i = 0; i < text.Length; i++)
                     {
                         textBreakUp = text[i];
                         textConvert = (int)textBreakUp;
                         textConvert = textConvert + (key * ((i + 1) % 2 +1));
+                        textConvert = textConvert.Round(textConvert);
                         Console.Write((char)textConvert);
                     }
                     if (i == 0)
@@ -119,11 +119,12 @@ namespace helloWorld
                     command = command.Replace("/end", " ");
                     command = command.Trim();
                     text = command;
-                    for (i = 0; i < text.Length; i++)
+                    for (int i = 0; i < text.Length; i++)
                     {
                         textBreakUp = text[i];
                         textConvert = (int)textBreakUp;
                         textConvert = textConvert - (key * ((i + 1) % 2 + 1));
+                        textConvert = textConvert.Round(textConvert);
                         Console.Write((char)textConvert);
                     }
                     if (i == 0)
@@ -147,6 +148,17 @@ namespace helloWorld
                         Console.WriteLine("Error, unknown command. Are there any indeliberate mistakes in your input?");
                     }
                 }
+            }
+        }
+        public static int Round(int num)
+        {
+            while (num > 126)
+            {
+                num = num - 94;
+            }
+            while (num < 33)
+            {
+                num = num + 94;
             }
         }
     }
