@@ -6,7 +6,6 @@ namespace helloWorld
     {
         static void Main(string[] args)
         {
-            // WARNING!!! The below code has not been tested yet. There may be errors in it.
             
             Console.WriteLine("CokeCoder v2.0");
             
@@ -27,32 +26,14 @@ namespace helloWorld
                 // the help command lists out every command useful
                 if (command.StartsWith("/help"))
                 {
-                    Console.WriteLine("/encode <string> -> Encodes text with a key");
-                    Console.WriteLine("/decode <string> -> Decodes text encoded with given key");
-                    Console.WriteLine("/key [int] -> Sets the encoding key to given number");
-                    Console.WriteLine("/guide -> Prints information on the program and troubleshooting tips");
+                    Help();
                 }
 
                 // the guide command gives info on particulars of the program
                 else if (command.StartsWith("/guide"))
                 {
-                    Console.WriteLine("Program info:");
-                    Console.WriteLine("   CokeCoder version 2.0 | Symmetric encoder");
-                    Console.WriteLine("   Console application, written in C# (153 lines)");
-                    Console.WriteLine("   Script written by _thelolcat with assistance and support from aless_dev06 and" +
-                        " furetto126");
-                    Console.WriteLine("   Last updated 27/07/2023");
-                    Console.WriteLine("  ");
-                    Console.WriteLine("If the program is not decoding properly, check if the key is accurate using /key" +
-                        " current");
-                    Console.WriteLine("If you see '?' in your encoded message, chances are that the console does not " +
-                        "support the coversion of that particular character. Try setting your key to a lower one for " +
-                        "better results");
-                    Console.WriteLine("Make sure there are no inaccuracies while entering commands");
-                    Console.WriteLine("Refer the internet for unknown program terms");
-                    Console.WriteLine("Press Enter to exit the program. Alternatively type '/end'");
+                    Guide();
                 }
-                
                 // the key command sets a key
                 else if (command.StartsWith("/key"))
                 {
@@ -64,16 +45,10 @@ namespace helloWorld
                     
                     if (int.TryParse(command, out result)) // checks if input is an integer
                     {
-                        if (result > 0 && result < 8) // checks if input < 8 and > 1
-                        {
+                        
                             key = result;
                             Console.WriteLine($"Set key to {key}");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Error, expected an integer between 1 and 7. Are there any " +
-                                "indeliberate mistakes in you input?");
-                        }
+                        
                     }
                     else
                     {
@@ -83,7 +58,7 @@ namespace helloWorld
                         }
                         else
                         {
-                            Console.WriteLine("Error, expected an integer between 1 and 7. Are there any indeliberate " +
+                            Console.WriteLine("Error, expected an integer. Are there any indeliberate " +
                                 "mistakes in your input?");
                         }
                     }
@@ -163,6 +138,31 @@ namespace helloWorld
                 num = num + 94;
             }
             return num;
+        }
+        public void Help()
+        {
+            Console.WriteLine("/encode <string> -> Encodes text with a key");
+            Console.WriteLine("/decode <string> -> Decodes text encoded with given key");
+            Console.WriteLine("/key [int] -> Sets the encoding key to given number");
+            Console.WriteLine("/guide -> Prints information on the program and troubleshooting tips");
+        }
+        public void Guide()
+        {
+            Console.WriteLine("Program info:");
+            Console.WriteLine("   CokeCoder version 2.0 | Symmetric encoder");
+            Console.WriteLine("   Console application, written in C# (153 lines)");
+            Console.WriteLine("   Script written by _thelolcat with assistance and support from aless_dev06 and" +
+                " furetto126");
+            Console.WriteLine("   Last updated 27/07/2023");
+            Console.WriteLine("  ");
+            Console.WriteLine("If the program is not decoding properly, check if the key is accurate using /key" +
+                " current");
+            Console.WriteLine("If you see '?' in your encoded message, chances are that the console does not " +
+                "support the coversion of that particular character. Try setting your key to a lower one for " +
+                "better results");
+            Console.WriteLine("Make sure there are no inaccuracies while entering commands");
+            Console.WriteLine("Refer the internet for unknown program terms");
+            Console.WriteLine("Press Enter to exit the program. Alternatively type '/end'");
         }
     }
 }
