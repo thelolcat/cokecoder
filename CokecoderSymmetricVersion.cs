@@ -17,6 +17,7 @@ namespace helloWorld
             int key = 1;
             int textConvert;
             int result;
+            int i;
 
             while (counter == 1) // carries on looping until you do not input
             {
@@ -71,7 +72,7 @@ namespace helloWorld
                     command = command.Replace("/end", " ");
                     command = command.Trim();
                     text = command;
-                    for (int i = 0; i < text.Length; i++)
+                    for (i = 0; i < text.Length; i++)
                     {
                         textBreakUp = text[i];
                         textConvert = (int)textBreakUp;
@@ -96,7 +97,7 @@ namespace helloWorld
                     command = command.Replace("/end", " ");
                     command = command.Trim();
                     text = command;
-                    for (int i = 0; i < text.Length; i++)
+                    for (i = 0; i < text.Length; i++)
                     {
                         textBreakUp = text[i];
                         textConvert = (int)textBreakUp;
@@ -139,14 +140,14 @@ namespace helloWorld
             }
             return num;
         }
-        public void Help()
+        public static void Help()
         {
             Console.WriteLine("/encode <string> -> Encodes text with a key");
             Console.WriteLine("/decode <string> -> Decodes text encoded with given key");
             Console.WriteLine("/key [int] -> Sets the encoding key to given number");
             Console.WriteLine("/guide -> Prints information on the program and troubleshooting tips");
         }
-        public void Guide()
+        public static void Guide()
         {
             Console.WriteLine("Program info:");
             Console.WriteLine("   CokeCoder version 2.0 | Symmetric encoder");
