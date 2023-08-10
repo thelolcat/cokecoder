@@ -4,20 +4,20 @@ namespace helloWorld
 {
     class Program
     {
+        // declaring variables
+        public static string command;
+        public static string text;
+        public static char textBreakUp;
+        public static int counter = 1;
+        public static int key = 1;
+        public static int textConvert;
+        public static int result;
+        public static int i;
+        
         static void Main(string[] args)
         {
             
             Console.WriteLine("CokeCoder v2.0");
-            
-            // declaring variables
-            string command;
-            string text;
-            char textBreakUp;
-            int counter = 1;
-            int key = 1;
-            int textConvert;
-            int result;
-            int i;
 
             while (counter == 1) // carries on looping until you do not input
             {
@@ -38,56 +38,13 @@ namespace helloWorld
                 // the key command sets a key
                 else if (command.StartsWith("/key"))
                 {
-                    command = command.Replace("/key", " ");
-                    command = command.Replace("/end", " ");
-                    command = command.Trim();
-                    /* The above code will be seen in the upcoming two lines too. This line deletes the command and the
-                     * ending string from the user input so that only the program can utilise the unique input */
-                    
-                    if (int.TryParse(command, out result)) // checks if input is an integer
-                    {
-                        
-                            key = result;
-                            Console.WriteLine($"Set key to {key}");
-                        
-                    }
-                    else
-                    {
-                        if (command.Contains("current")) // shows current key
-                        {
-                            Console.WriteLine($"The current key being used is {key}");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Error, expected an integer. Are there any indeliberate " +
-                                "mistakes in your input?");
-                        }
-                    }
+                    Key();
                 }
                 
                 // the encode command encodes text with given key
                 else if (command.StartsWith("/encode"))
                 {
-                    command = command.Replace("/encode", " ");
-                    command = command.Replace("/end", " ");
-                    command = command.Trim();
-                    text = command;
-                    for (i = 0; i < text.Length; i++)
-                    {
-                        textBreakUp = text[i];
-                        textConvert = (int)textBreakUp;
-                        textConvert = textConvert + (key * ((i + 1) % 2 +1));
-                        textConvert = Round(textConvert);
-                        Console.Write((char)textConvert);
-                    }
-                    if (i == 0)
-                    {
-                        Console.WriteLine("Error, expected string input in command -> /encode <string>");
-                    }
-                    else
-                    {
-                        Console.WriteLine($" encoded using key {key}");
-                    }
+                    Encode();
                 }
                 
                 // the decode command decodes text with given key
@@ -165,5 +122,57 @@ namespace helloWorld
             Console.WriteLine("Refer the internet for unknown program terms");
             Console.WriteLine("Press Enter to exit the program. Alternatively type '/end'");
         }
+        public static void Key()
+        {
+            command = command.Replace("/key", " ");
+            command = command.Replace("/end", " ");
+            command = command.Trim();
+            /* The above code will be seen in the upcoming two functions too. This line deletes the command and the
+            * ending string from the user input so that only the program can utilise the unique input */
+                    
+            if (int.TryParse(command, out result)) // checks if input is an integer
+            {
+                        
+                    key = result;
+                    Console.WriteLine($"Set key to {key}");
+                        
+            }
+            else
+            {
+                if (command.Contains("current")) // shows current key
+                {
+                    Console.WriteLine($"The current key being used is {key}");
+                }
+                else
+                {
+                    Console.WriteLine("Error, expected an integer. Are there any indeliberate " +
+                        "mistakes in your input?");
+                }
+            }
+        }
+        public static void Encode()
+        {
+            command = command.Replace("/encode", " ");
+            command = command.Replace("/end", " ");
+            command = command.Trim();
+            text = command;
+            for (i = 0; i < text.Length; i++)
+            {
+                textBreakUp = text[i];
+                textConvert = (int)textBreakUp;
+                textConvert = textConvert + (key * ((i + 1) % 2 +1));
+                textConvert = Round(textConvert);
+                Console.Write((char)textConvert);
+            }
+            if (i == 0)
+            {
+                Console.WriteLine("Error, expected string input in command -> /encode <string>");
+            }
+            else
+            {
+                Console.WriteLine($" encoded using key {key}");
+            }
+        }
+        
     }
 }
