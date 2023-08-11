@@ -88,11 +88,11 @@ namespace helloWorld
         public static void Guide()
         {
             Console.WriteLine("Program info:");
-            Console.WriteLine("   CokeCoder version 2.2 | Symmetric encoder");
-            Console.WriteLine("   Console application, written in C# (169 lines)");
+            Console.WriteLine("   CokeCoder version 2.6 | Symmetric encoder");
+            Console.WriteLine("   Console application, written in C# (181 lines)");
             Console.WriteLine("   Script written by _thelolcat with assistance and support from aless_dev06 and" +
                 " furetto126");
-            Console.WriteLine("   Last updated 06/08/2023");
+            Console.WriteLine("   Last updated 11/08/2023");
             Console.WriteLine("  ");
             Console.WriteLine("If the program is not decoding properly, check if the key is accurate using /key" +
                 " current");
