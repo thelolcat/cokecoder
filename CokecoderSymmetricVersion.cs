@@ -50,26 +50,7 @@ namespace helloWorld
                 // the decode command decodes text with given key
                 else if (command.StartsWith("/decode"))
                 {
-                    command = command.Replace("/decode", " ");
-                    command = command.Replace("/end", " ");
-                    command = command.Trim();
-                    text = command;
-                    for (i = 0; i < text.Length; i++)
-                    {
-                        textBreakUp = text[i];
-                        textConvert = (int)textBreakUp;
-                        textConvert = textConvert - (key * ((i + 1) % 2 + 1));
-                        textConvert = Round(textConvert);
-                        Console.Write((char)textConvert);
-                    }
-                    if (i == 0)
-                    {
-                        Console.WriteLine("Error, expected string input in command -> /decode <string>");
-                    }
-                    else
-                    {
-                        Console.WriteLine($" decoded from {text} using key {key}");
-                    }
+                    Decode();
                 }
                 else
                 {
@@ -173,6 +154,28 @@ namespace helloWorld
                 Console.WriteLine($" encoded using key {key}");
             }
         }
-        
+        public static void Decode()
+        {
+            command = command.Replace("/decode", " ");
+            command = command.Replace("/end", " ");
+            command = command.Trim();
+            text = command;
+            for (i = 0; i < text.Length; i++)
+            {
+                textBreakUp = text[i];
+                textConvert = (int)textBreakUp;
+                textConvert = textConvert - (key * ((i + 1) % 2 + 1));
+                textConvert = Round(textConvert);
+                Console.Write((char)textConvert);
+            }
+            if (i == 0)
+            {
+                Console.WriteLine("Error, expected string input in command -> /decode <string>");
+            }
+            else
+            {
+                Console.WriteLine($" decoded from {text} using key {key}");
+            }
+        }
     }
 }
