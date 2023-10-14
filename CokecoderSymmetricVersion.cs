@@ -17,7 +17,7 @@ namespace helloWorld
         static void Main(string[] args)
         {
             
-            Console.WriteLine("CokeCoder v2.0");
+            Console.WriteLine("CokeCoder v2.7");
 
             while (counter == 1) // carries on looping until you do not input
             {
@@ -70,11 +70,11 @@ namespace helloWorld
         {
             while (num > 126)
             {
-                num = num - 94;
+                num = num - 95;
             }
-            while (num < 33)
+            while (num < 32)
             {
-                num = num + 94;
+                num = num + 95;
             }
             return num;
         }
@@ -88,11 +88,11 @@ namespace helloWorld
         public static void Guide()
         {
             Console.WriteLine("Program info:");
-            Console.WriteLine("   CokeCoder version 2.6 | Symmetric encoder");
+            Console.WriteLine("   CokeCoder version 2.7 | Symmetric encoder");
             Console.WriteLine("   Console application, written in C# (181 lines)");
             Console.WriteLine("   Script written by _thelolcat with assistance and support from aless_dev06 and" +
                 " furetto126");
-            Console.WriteLine("   Last updated 11/08/2023");
+            Console.WriteLine("   Last updated 11/10/2023");
             Console.WriteLine("  ");
             Console.WriteLine("If the program is not decoding properly, check if the key is accurate using /key" +
                 " current");
@@ -100,7 +100,7 @@ namespace helloWorld
                 "support the coversion of that particular character. Try setting your key to a lower one for " +
                 "better results");
             Console.WriteLine("Make sure there are no inaccuracies while entering commands");
-            Console.WriteLine("Refer the internet for unknown program terms");
+            Console.WriteLine("Refer the internet for unknown programming terms");
             Console.WriteLine("Press Enter to exit the program. Alternatively type '/end'");
         }
         public static void Key()
