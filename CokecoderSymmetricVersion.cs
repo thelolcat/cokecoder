@@ -105,11 +105,7 @@ namespace helloWorld
         }
         public static void Key()
         {
-            command = command.Replace("/key", " ");
-            command = command.Replace("/end", " ");
-            command = command.Trim();
-            /* The above code will be seen in the upcoming two functions too. This line deletes the command and the
-            * ending string from the user input so that only the program can utilise the unique input */
+            text = Prepare(command);
                     
             if (int.TryParse(command, out result)) // checks if input is an integer
             {
@@ -133,10 +129,7 @@ namespace helloWorld
         }
         public static void Encode()
         {
-            command = command.Replace("/encode", " ");
-            command = command.Replace("/end", " ");
-            command = command.Trim();
-            text = command;
+            text = Prepare(command);
             for (i = 0; i < text.Length; i++)
             {
                 textBreakUp = text[i];
@@ -156,10 +149,7 @@ namespace helloWorld
         }
         public static void Decode()
         {
-            command = command.Replace("/decode", " ");
-            command = command.Replace("/end", " ");
-            command = command.Trim();
-            text = command;
+            text = Prepare(command);
             for (i = 0; i < text.Length; i++)
             {
                 textBreakUp = text[i];
@@ -176,6 +166,15 @@ namespace helloWorld
             {
                 Console.WriteLine($" decoded from {text} using key {key}");
             }
+        }
+        public static string Prepare(string command)
+        {
+            command = command.Replace("/decode", " ");
+            command = command.Replace("/encode"," ");
+            command = command.Replace("/key"," ");
+            command = command.Replace("/end", " ");
+            command = command.Trim();
+            return command;
         }
     }
 }
