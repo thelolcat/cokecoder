@@ -14,7 +14,7 @@ namespace helloWorld
         public static int result;
         public static int i;
         
-        static void Main(string[] args) 
+        static void Main(string[] args)
         {
             
             Console.WriteLine("CokeCoder v2.7");
