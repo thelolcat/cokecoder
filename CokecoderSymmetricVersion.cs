@@ -12,11 +12,9 @@ namespace helloWorld
         public static int key = 1;
         public static int textConvert;
         public static int result;
-        public static int i;
-        
-        static void Main(string[] args) 
-        {
-            
+        public static int i;        
+        static void Main(string[] args)
+        {            
             Console.WriteLine("CokeCoder v2.7");
 
             while (counter == 1) // carries on looping until you do not input
@@ -41,13 +39,13 @@ namespace helloWorld
                     Key();
                 }
                 
-                // the encode command encodes text with given key
+                //the encode command encodes text with given key
                 else if (command.StartsWith("/encode"))
                 {
                     Encode();
                 }
                 
-                // the decode command decodes text with given key
+                //the decode command decodes text with given key
                 else if (command.StartsWith("/decode"))
                 {
                     Decode();
