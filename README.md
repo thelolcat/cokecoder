@@ -13,4 +13,4 @@ By default, the key in this program is set to 1; it is recommended to change it 
 
  Huge thanks to aless_dev06 and furetto126 at Discord for supporting me.
 
-   _thelolcat 
+   thelolcat 
