@@ -28,7 +28,7 @@ namespace helloWorld
 {
     class Program
     {
-        // declaring variables
+        // declaring public variables
         public static string command;
         public static string text;
         public static char textBreakUp;
