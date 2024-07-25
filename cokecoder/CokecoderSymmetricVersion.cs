@@ -30,6 +30,8 @@ namespace helloWorld
     {
         // general information
         public static double version = 2.8;
+        public static string updateDate = "24/07/2024";
+        public static int scriptLines = 205;
 
         // declaring variables
         public static string command = "";
@@ -115,10 +117,10 @@ namespace helloWorld
         {
             Console.WriteLine("Program info:");
             Console.WriteLine($"   CokeCoder version {version} | Symmetric encoder");
-            Console.WriteLine("   Console application, written in C# (200 lines)");
+            Console.WriteLine($"   Console application, written in C# ({scriptLines} lines)");
             Console.WriteLine("   Script written by _thelolcat with assistance and support from aless_dev06 and" +
                 " furetto126");
-            Console.WriteLine("   Last updated 23/07/2024");
+            Console.WriteLine($"   Last updated {updateDate}");
             Console.WriteLine("  ");
             Console.WriteLine("If the program is not decoding properly, check if the key is accurate using /key" +
                 " current");
